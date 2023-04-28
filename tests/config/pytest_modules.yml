@@ -3432,6 +3432,10 @@ subworkflows/homer/groseq:
   - subworkflows/nf-core/homer/groseq/**
   - tests/subworkflows/nf-core/homer/groseq/**
 
+subworkflows/mskcc_arriba:
+  - subworkflows/nf-core/mskcc_arriba/**
+  - tests/subworkflows/nf-core/mskcc_arriba/**
+
 subworkflows/prepnucleo:
   - subworkflows/nf-core/prepnucleo/**
   - tests/subworkflows/nf-core/prepnucleo/**
