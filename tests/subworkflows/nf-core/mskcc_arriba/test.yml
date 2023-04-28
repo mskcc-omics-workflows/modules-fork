@@ -16,7 +16,7 @@
       md5sum: a654229fbca6071dcb6b01ce7df704da
     - path: output/star/star/Log.out
       contains:
-        - 'DONE: Genome generation, EXITING'
+        - "DONE: Genome generation, EXITING"
     - path: output/star/star/SA
       md5sum: 8c3edc46697b72c9e92440d4cf43506c
     - path: output/star/star/SAindex
@@ -49,12 +49,12 @@
       md5sum: 4532f5e64495a71b8d62af4eb91fc2d0
     - path: output/star/test.Log.final.out
       contains:
-        - 'Mapping speed, Million of reads per hour'
+        - "Mapping speed, Million of reads per hour"
     - path: output/star/test.Log.out
       contains:
-        - 'ALL DONE!'
+        - "ALL DONE!"
     - path: output/star/test.Log.progress.out
       contains:
-        - 'ALL DONE!'
+        - "ALL DONE!"
     - path: output/star/test.SJ.out.tab
       md5sum: 5155c9fd1f787ad6d7d80987fb06219c
