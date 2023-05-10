@@ -1,9 +1,6 @@
 name: Sync Fork
 
 on:
-  push:
-    branches:
-    - "master"
   schedule:
     - cron: "0 0 * * *"
 
@@ -25,7 +22,7 @@ jobs:
       - name: Merge upstream master into forked master
         run: |
           git checkout master
-          git merge upstream/master --no-edit --allow-unrelated-histories
+          git merge upstream/master --no-edit
 
       - name: Push changes to forked repository
         run: |
