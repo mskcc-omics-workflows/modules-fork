@@ -21,7 +21,7 @@ workflow EXTRACTUMI {
 
     ch_versions = Channel.empty()
 
-    // FGBIO_FASTQTOBAM: get unmerged bams 
+    // FGBIO_FASTQTOBAM: get unmerged bams
     // ch_fastq is a channel, which enables parallel
     // channels enable parallel: https://www.nextflow.io/docs/latest/faq.html?highlight=parallel
     FGBIO_FASTQTOBAM (
@@ -32,11 +32,11 @@ workflow EXTRACTUMI {
             [bam]
     }.collect().map{
         bams ->
-         [[id: 'unmerged_bams'], bams ]
+        [[id: 'unmerged_bams'], bams ]
     }.set{unmerged_bams}
     ch_versions = ch_versions.mix(FGBIO_FASTQTOBAM.out.versions)
 
-    // PICARD_MERGESAMFILES: merge bams files 
+    // PICARD_MERGESAMFILES: merge bams files
     PICARD_MERGESAMFILES (
         unmerged_bams
     ).bam.map {
@@ -45,8 +45,7 @@ workflow EXTRACTUMI {
             [[id: new_id], bam ]
     }.set {merged_bam}
     ch_versions = ch_versions.mix(PICARD_MERGESAMFILES.out.versions)
-
-    // GATK4_SAMTOFASTQ: get fastqs from merged bam 
+    // GATK4_SAMTOFASTQ: get fastqs from merged bam
     GATK4_SAMTOFASTQ (
         merged_bam
     ).fastq.map {
@@ -56,7 +55,7 @@ workflow EXTRACTUMI {
     }.set {merged_fastq}
     ch_versions = ch_versions.mix(GATK4_SAMTOFASTQ.out.versions)
 
-    // GATK4_SAMTOFASTQ: Run fastp on fastqs 
+    // GATK4_SAMTOFASTQ: Run fastp on fastqs
     FASTP (
         merged_fastq, [], false, false
     )
@@ -65,7 +64,7 @@ workflow EXTRACTUMI {
     // final emit
     emit:
     // TODO nf-core: edit emitted channels
-    bam      = FASTP.out.reads          
+    bam = FASTP.out.reads
 
     versions = ch_versions                     // channel: [ versions.yml ]
 }
