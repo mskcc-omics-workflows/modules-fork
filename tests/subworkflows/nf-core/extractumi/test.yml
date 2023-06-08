@@ -13,16 +13,16 @@
   files:
     - path: output/fastp/merged_fastq.fastp.html
       contains:
-        - " # TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead "
+        - ' # TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead '
     - path: output/fastp/merged_fastq.fastp.json
-      md5sum: 46bbed497953f1c7b3e4941771750f6d
+      md5sum: 8c9cfed703141dd32818ce8abe9d2465
     - path: output/fastp/merged_fastq.fastp.log
       contains:
-        - " # TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead "
+        - ' # TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead '
     - path: output/fastp/merged_fastq_1.fastp.fastq.gz
-      md5sum: 697ad371be463f83b095e85152aa3046
+      md5sum: fdba450358c761a3e4264164da8b60b1
     - path: output/fastp/merged_fastq_2.fastp.fastq.gz
-      md5sum: 26328b6503c3c6ba480adfbdc9dbf54f
+      md5sum: ca18410c7ebc49c778fe3dd059e8fee9
     - path: output/fgbio/gene1.bam
       md5sum: fb9749c10bbf3917dbf739de827276f7
     - path: output/fgbio/gene2.bam
@@ -32,4 +32,5 @@
     - path: output/gatk4/merged_bam_2.fastq.gz
       md5sum: 94c76d2f77a71d81ac26adcf94720ecd
     - path: output/picard/unmerged_bams.bam
-      md5sum: a921915f4ea117e3a10daeb07d31abdb
+      contains:
+        - ' # TODO nf-core: file md5sum was variable, please replace this text with a string found in the file instead '
