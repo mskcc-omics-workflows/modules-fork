@@ -34,7 +34,7 @@ workflow EXTRACTUMI {
         bams ->
         [[id: 'unmerged_bams'], bams ]
     }.set{unmerged_bams}
-    ch_versions = ch_versions.mix(FGBIO_FASTQTOBAM.out.versions)
+    ch_versions = ch_versions.mix(FGBIO_FASTQTOBAM.out.versions) //write out versioning
 
     // PICARD_MERGESAMFILES: merge bams files
     PICARD_MERGESAMFILES (
