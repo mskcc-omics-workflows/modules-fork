@@ -1,7 +1,7 @@
 
 FROM ubuntu:18.04
 LABEL authors="Yu Hu" \
-    description="Docker image containing MSK_MERGEFASTQ tool to merge raw fastq files"
+    description="Docker image containing MERGEFASTQ tool to merge raw fastq files"
 
 # 'ps' command is needed by some nextflow executions to collect system stats
 # Install procps and clean apt cache
