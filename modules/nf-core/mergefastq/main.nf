@@ -1,4 +1,4 @@
-process MSK_MERGEFASTQ {
+process MERGEFASTQ {
     tag "$meta.id"
     label 'process_low'
 
@@ -31,7 +31,7 @@ process MSK_MERGEFASTQ {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        msk_mergefastq: \$(echo \$(gzip --version 2>&1) | sed 's/^.*gzip //; s/Copyright.*\$//' )
+        mergefastq: \$(echo \$(gzip --version 2>&1) | sed 's/^.*gzip //; s/Copyright.*\$//' )
     END_VERSIONS
     """
 }

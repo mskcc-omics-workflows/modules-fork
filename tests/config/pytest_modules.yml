@@ -2422,9 +2422,9 @@ msisensorpro/scan:
   - modules/nf-core/msisensorpro/scan/**
   - tests/modules/nf-core/msisensorpro/scan/**
 
-msk/mergefastq:
-  - modules/nf-core/msk/mergefastq/**
-  - tests/modules/nf-core/msk/mergefastq/**
+mergefastq:
+  - modules/nf-core/mergefastq/**
+  - tests/modules/nf-core/mergefastq/**
 
 mtnucratio:
   - modules/nf-core/mtnucratio/**

@@ -2,9 +2,9 @@
 
 nextflow.enable.dsl = 2
 
-include { MSK_MERGEFASTQ } from '../../../../../modules/nf-core/msk/mergefastq/main.nf'
+include { MERGEFASTQ } from '../../../../modules/nf-core/mergefastq/main.nf'
 
-//ch_test_data = Channel.fromFilePairs( '../../../../Sample*_L00{1,2}_R1_001.fastq.gz')
+//ch_test_data = Channel.fromFilePairs('Sample*_L00{1,2}_R1_001.fastq.gz')
 //    .flatten()
 //    .toList()
 //    .set { ch_pair_data }
@@ -20,7 +20,7 @@ ch_test_data = Channel.fromPath('Sample*_L00{1,2}_R1_001.fastq.gz', checkIfExist
     .set{ ch_pair_data }
 meta = [ id:'test', sample_name:'', read:'' ] // meta map
 
-workflow test_msk_mergefastq {
+workflow test_mergefastq {
     
     ch_pair_data
         .map { fastq_1, fastq_2 ->
@@ -29,10 +29,10 @@ workflow test_msk_mergefastq {
                 [ meta, fastq_1, fastq_2 ] }
         .set { input }
 
-    MSK_MERGEFASTQ ( input )
+    MERGEFASTQ ( input )
 }
 
 //workflow {
-//    test_msk_mergefastq()
+//    test_mergefastq()
 //}
 //nextflow run main.nf -process.echo -profile docker 
