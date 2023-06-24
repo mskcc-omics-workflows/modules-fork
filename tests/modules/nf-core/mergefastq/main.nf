@@ -10,7 +10,8 @@ include { MERGEFASTQ } from '../../../../modules/nf-core/mergefastq/main.nf'
 //    .set { ch_pair_data }
 
 // Sample*_R2_001.fastq.gz
-ch_test_data = Channel.fromPath('Sample*_L00{1,2}_R1_001.fastq.gz', checkIfExists:true)
+//ch_test_data = Channel.fromPath('Sample*_L00{1,2}_R1_001.fastq.gz', checkIfExists:true)
+ch_test_data = Channel.fromPath([params.test_data['rawfastq']['fastq_1'], params.test_data['rawfastq']['fastq_2']], checkIfExists:true)
     .toList()
     .map { fastq -> 
         def fastq_list = fastq.size == 2 ? fastq : fastq + [file("null")] // For single fastq file
