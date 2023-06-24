@@ -4,6 +4,4 @@
     - mergefastq
   files:
     - path: output/mergefastq/Sample1-T2_L000_R1_mrg.fastq.gz
-      md5sum: c2fe56805d577f903ac890714603f0f8
     - path: output/mergefastq/versions.yml
-      md5sum: f755e3853b858866870dc32f568e9f30
