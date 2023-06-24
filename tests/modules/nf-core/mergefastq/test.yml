@@ -1,10 +1,9 @@
-#                nf-core modules create-test-yml mergefastq
-- name: "mergefastq"
+- name: mergefastq
   command: nextflow run ./tests/modules/nf-core/mergefastq -entry test_mergefastq -c ./tests/config/nextflow.config -c ./tests/modules/nf-core/mergefastq/nextflow.config
   tags:
-    - "mergefastq"
+    - mergefastq
   files:
-    - path: "output/mergefastq/Sample1-T2_L000_R1_mrg.fastq.gz"
-    - path: "output/mergefastq/versions.yml"
+    - path: output/mergefastq/Sample1-T2_L000_R1_mrg.fastq.gz
+      md5sum: c2fe56805d577f903ac890714603f0f8
+    - path: output/mergefastq/versions.yml
       md5sum: f755e3853b858866870dc32f568e9f30
-    
