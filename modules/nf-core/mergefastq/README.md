@@ -1,4 +1,4 @@
-## merge_gzip
+## mergefastq
 
 #### Description:
 
