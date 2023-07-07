@@ -1,7 +1,12 @@
-name: Pytest-workflow-develop
+name: Pytest-workflow
 on:
+  push:
+    branches: [master]
   pull_request:
-    branches: [develop]
+    branches: [master]
+  merge_group:
+    types: [checks_requested]
+    branches: [master]
 
 # Cancel if a newer run is started
 concurrency:
@@ -117,6 +122,12 @@ jobs:
             tags: scimap/mcmicro
           - tags: "sentieon/*"
           - profile: "conda"
+            tags: spaceranger/count
+          - profile: "conda"
+            tags: spaceranger/mkgtf
+          - profile: "conda"
+            tags: spaceranger/mkref
+          - profile: "conda"
             tags: universc
           - profile: "singularity"
             tags: universc
@@ -126,6 +137,8 @@ jobs:
             tags: subworkflows/bcl_demultiplex
           - profile: "conda"
             tags: subworkflows/vcf_annotate_ensemblvep
+          - profile: "conda"
+            tags: subworkflows/fasta_clean_fcs
           - profile: "conda"
             tags: islandpath
     env:
