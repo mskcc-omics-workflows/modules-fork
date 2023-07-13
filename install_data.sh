@@ -10,8 +10,8 @@ filename=test_nucleo.tar.gz
 foldername=test_nucleo
 
 # Skip if already have test data
-[[ -f $filename ]] && exit 0
-[[ -d $foldername ]] && exit 0
+[[ -f $filename ]]
+[[ -d $foldername ]]
 
 curl -c ./cookie -s -k -L "https://drive.google.com/uc?export=download&id=$fileid" > /dev/null
 
