@@ -2474,6 +2474,10 @@ msisensorpro/scan:
   - modules/nf-core/msisensorpro/scan/**
   - tests/modules/nf-core/msisensorpro/scan/**
 
+mergefastq:
+  - modules/nf-core/mergefastq/**
+  - tests/modules/nf-core/mergefastq/**
+
 mtnucratio:
   - modules/nf-core/mtnucratio/**
   - tests/modules/nf-core/mtnucratio/**
