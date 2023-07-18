@@ -1,6 +1,6 @@
 process BCFTOOLS_QUERY {
     tag "$meta.id"
-    label 'process_medium'
+    label 'process_single'
 
     conda "bioconda::bcftools=1.17"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
@@ -29,7 +29,6 @@ process BCFTOOLS_QUERY {
     def samples_file =  samples ? "--samples-file ${samples}" : ""
     """
     bcftools query \\
-        --output ${prefix}.txt \\
         $regions_file \\
         $targets_file \\
         $samples_file \\
