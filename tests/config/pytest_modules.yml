@@ -3680,10 +3680,6 @@ subworkflows/bedgraph_bedclip_bedgraphtobigwig:
   - subworkflows/nf-core/bedgraph_bedclip_bedgraphtobigwig/**
   - tests/subworkflows/nf-core/bedgraph_bedclip_bedgraphtobigwig/**
 
-subworkflows/extractumi:
-  - subworkflows/nf-core/extractumi/**
-  - tests/subworkflows/nf-core/extractumi/**
-
 subworkflows/fasta_binning_concoct:
   - subworkflows/nf-core/fasta_binning_concoct/**
   - tests/subworkflows/nf-core/fasta_binning_concoct/**
@@ -3771,6 +3767,10 @@ subworkflows/multiple_impute_glimpse2:
 subworkflows/vcf_annotate_ensemblvep:
   - subworkflows/nf-core/vcf_annotate_ensemblvep/**
   - tests/subworkflows/nf-core/vcf_annotate_ensemblvep/**
+
+subworkflows/vcf_annotate_ensemblvep_snpeff:
+  - subworkflows/nf-core/vcf_annotate_ensemblvep_snpeff/**
+  - tests/subworkflows/nf-core/vcf_annotate_ensemblvep_snpeff/**
 
 subworkflows/vcf_annotate_snpeff:
   - subworkflows/nf-core/vcf_annotate_snpeff/**
