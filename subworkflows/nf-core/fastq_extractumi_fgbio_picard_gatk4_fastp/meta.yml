@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:subworkflows/nf-core/alignment/meta.yml
-name: "alignment"
-========
+
 name: "fastq_extractumi_fgbio_picard_gatk4_fastp"
->>>>>>>> feature/extractumi:subworkflows/nf-core/fastq_extractumi_fgbio_picard_gatk4_fastp/meta.yml
 ## TODO nf-core: Add a description of the subworkflow and list keywords
 description: Sort SAM/BAM/CRAM file
 keywords:
