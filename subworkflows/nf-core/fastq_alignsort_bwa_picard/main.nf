@@ -6,7 +6,7 @@ include { BWAMEM2_MEM      } from '../../../modules/nf-core/bwamem2/mem/main'
 include { BWAMEM2_INDEX      } from '../../../modules/nf-core/bwamem2/index/main'
 include { PICARD_ADDORREPLACEREADGROUPS      } from '../../../modules/nf-core/picard/addorreplacereadgroups/main'
 
-workflow ALIGNMENT {
+workflow FASTQ_ALIGNSORT_BWA_PICARD {
 
     take:
     fastqs // channel: [ val(meta), [ bam ] ]
@@ -22,26 +22,26 @@ workflow ALIGNMENT {
         case 1:
             // INDEX
             BWA_INDEX ( reference )
-            versions = versions.mix(BWA_INDEX.out.versions.first())
+            versions = versions.mix(BWA_INDEX.out.versions)
             // MEM
             BWA_MEM ( fastqs, BWA_INDEX.out.index, true ).bam.map {
                 meta, bam ->
                     new_id = 'aligned_bam'
                     [[id: new_id], bam ]
             }.set {aligned_bam}
-            versions = versions.mix(BWA_MEM.out.versions.first())
+            versions = versions.mix(BWA_MEM.out.versions)
             break
         case 2:
             // INDEX
             BWAMEM2_INDEX (reference)
-            versions = versions.mix(BWAMEM2_INDEX.out.versions.first())
+            versions = versions.mix(BWAMEM2_INDEX.out.versions)
             // BWA MEM2
             BWAMEM2_MEM ( fastqs, BWAMEM2_INDEX.out.index, true ).bam.map {
                 meta, bam ->
                     new_id = 'aligned_bam'
                     [[id: new_id], bam ]
             }.set {aligned_bam}
-            versions = versions.mix(BWAMEM2_MEM.out.versions.first())
+            versions = versions.mix(BWAMEM2_MEM.out.versions)
             break
         default:
             throw new Exception("The argument bwa must be either 1 or 2, not ${bwa}.")
@@ -53,7 +53,7 @@ workflow ALIGNMENT {
             new_id = 'grouped_aligned_bam'
             [[id: new_id], bam ]
     }.set {grouped_bam}
-    versions = versions.mix(PICARD_ADDORREPLACEREADGROUPS.out.versions.first())
+    versions = versions.mix(PICARD_ADDORREPLACEREADGROUPS.out.versions)
 
     // final output
     emit:

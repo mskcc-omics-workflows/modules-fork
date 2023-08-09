@@ -61,7 +61,7 @@ workflow FASTQ_EXTRACTUMI_FGBIO_PICARD_GATK4_FASTP {
     // final emit
     emit:
     // TODO nf-core: edit emitted channels
-    bam = FASTP.out.reads
+    fastq = FASTP.out.reads
 
     versions = ch_versions                     // channel: [ versions.yml ]
 
