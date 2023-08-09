@@ -47,7 +47,7 @@ workflow FASTQ_ALIGNSORT_BWA_PICARD {
             throw new Exception("The argument bwa must be either 1 or 2, not ${bwa}.")
     }
 
-
+    // Picard add and replace 
     PICARD_ADDORREPLACEREADGROUPS(aligned_bam).bam.map {
         meta, bam ->
             new_id = 'grouped_aligned_bam'
@@ -59,7 +59,6 @@ workflow FASTQ_ALIGNSORT_BWA_PICARD {
     emit:
 
     bam      = PICARD_ADDORREPLACEREADGROUPS.out.bam           // channel: [ val(meta), [ bam ] ]
-
 
     versions = versions                     // channel: [ versions.yml ]
 }
