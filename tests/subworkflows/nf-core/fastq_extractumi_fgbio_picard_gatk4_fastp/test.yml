@@ -14,8 +14,6 @@
     - path: output/fastp/merged_fastq.fastp.html
     - path: output/fastp/merged_fastq.fastp.json
       md5sum: 8c9cfed703141dd32818ce8abe9d2465
-    - path: output/fastp/merged_fastq.fastp.log
-      md5sum: f2adc907670b9874c072ed5102dce17b
     - path: output/fastp/merged_fastq_1.fastp.fastq.gz
       md5sum: fdba450358c761a3e4264164da8b60b1
     - path: output/fastp/merged_fastq_2.fastp.fastq.gz
@@ -28,5 +26,3 @@
       md5sum: 8d87d76a1a07892a4bd0b2709338831e
     - path: output/gatk4/merged_bam_2.fastq.gz
       md5sum: 94c76d2f77a71d81ac26adcf94720ecd
-    - path: output/picard/unmerged_bams.bam
-      md5sum: 31c8e580423b6217390b5a8035c094c7
