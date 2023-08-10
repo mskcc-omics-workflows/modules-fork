@@ -20,15 +20,13 @@ workflow FASTQ_ALIGNSORT_BWA_PICARD {
     // switch statement to determine which bwa to use, this is a passed parameter
     switch(bwa){
         case 1:
-            // INDEX
             BWA_INDEX ( reference )
-            versions = versions.mix(BWA_INDEX.out.versions)
             // MEM
-            BWA_MEM ( fastqs, BWA_INDEX.out.index, true ).bam.map {
+            aligned_bam = BWA_MEM ( fastqs, BWA_INDEX.out.index, true ).bam.map {
                 meta, bam ->
                     new_id = 'aligned_bam'
                     [[id: new_id], bam ]
-            }.set {aligned_bam}
+            }
             versions = versions.mix(BWA_MEM.out.versions)
             break
         case 2:
@@ -36,11 +34,11 @@ workflow FASTQ_ALIGNSORT_BWA_PICARD {
             BWAMEM2_INDEX (reference)
             versions = versions.mix(BWAMEM2_INDEX.out.versions)
             // BWA MEM2
-            BWAMEM2_MEM ( fastqs, BWAMEM2_INDEX.out.index, true ).bam.map {
+            aligned_bam = BWAMEM2_MEM ( fastqs, BWAMEM2_INDEX.out.index, true ).bam.map {
                 meta, bam ->
                     new_id = 'aligned_bam'
                     [[id: new_id], bam ]
-            }.set {aligned_bam}
+            }
             versions = versions.mix(BWAMEM2_MEM.out.versions)
             break
         default:
