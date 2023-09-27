@@ -1,0 +1,28 @@
+- name: fastq_extractumi_fgbio_picard_gatk4_fastp test_fastq_extractumi_fgbio_picard_gatk4_fastp
+  command: nextflow run ./tests/subworkflows/nf-core/fastq_extractumi_fgbio_picard_gatk4_fastp -entry test_fastq_extractumi_fgbio_picard_gatk4_fastp -c ./tests/config/nextflow.config
+  tags:
+    - fastp
+    - fgbio
+    - fgbio/fastqtobam
+    - gatk4
+    - gatk4/samtofastq
+    - picard
+    - picard/mergesamfiles
+    - subworkflows
+    - subworkflows/fastq_extractumi_fgbio_picard_gatk4_fastp
+  files:
+    - path: output/fastp/merged_fastq.fastp.html
+    - path: output/fastp/merged_fastq.fastp.json
+      md5sum: 8c9cfed703141dd32818ce8abe9d2465
+    - path: output/fastp/merged_fastq_1.fastp.fastq.gz
+      md5sum: fdba450358c761a3e4264164da8b60b1
+    - path: output/fastp/merged_fastq_2.fastp.fastq.gz
+      md5sum: ca18410c7ebc49c778fe3dd059e8fee9
+    - path: output/fgbio/gene1.bam
+      md5sum: fb9749c10bbf3917dbf739de827276f7
+    - path: output/fgbio/gene2.bam
+      md5sum: 4596c2c2a8f94d770410246fb03f3baa
+    - path: output/gatk4/merged_bam_1.fastq.gz
+      md5sum: 8d87d76a1a07892a4bd0b2709338831e
+    - path: output/gatk4/merged_bam_2.fastq.gz
+      md5sum: 94c76d2f77a71d81ac26adcf94720ecd

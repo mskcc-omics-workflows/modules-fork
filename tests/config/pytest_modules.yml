@@ -3784,6 +3784,10 @@ subworkflows/fasta_newick_epang_gappa:
   - subworkflows/nf-core/fasta_newick_epang_gappa/**
   - tests/subworkflows/nf-core/fasta_newick_epang_gappa/**
 
+subworkflows/fastq_alignsort_bwa_picard:
+  - subworkflows/nf-core/fastq_alignsort_bwa_picard/**
+  - tests/subworkflows/nf-core/fastq_alignsort_bwa_picard/**
+
 subworkflows/fastq_align_bowtie2:
   - subworkflows/nf-core/fastq_align_bowtie2/**
   - tests/subworkflows/nf-core/fastq_align_bowtie2/**
@@ -3823,6 +3827,10 @@ subworkflows/fastq_create_umi_consensus_fgbio:
 subworkflows/fastq_download_prefetch_fasterqdump_sratools:
   - subworkflows/nf-core/fastq_download_prefetch_fasterqdump_sratools/**
   - tests/subworkflows/nf-core/fastq_download_prefetch_fasterqdump_sratools/**
+
+subworkflows/fastq_extractumi_fgbio_picard_gatk4_fastp:
+  - subworkflows/nf-core/fastq_extractumi_fgbio_picard_gatk4_fastp/**
+  - tests/subworkflows/nf-core/fastq_extractumi_fgbio_picard_gatk4_fastp/**
 
 subworkflows/fastq_fastqc_umitools_fastp:
   - subworkflows/nf-core/fastq_fastqc_umitools_fastp/**
