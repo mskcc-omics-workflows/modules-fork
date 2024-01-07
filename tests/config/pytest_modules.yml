@@ -3824,6 +3824,10 @@ subworkflows/fastq_download_prefetch_fasterqdump_sratools:
   - subworkflows/nf-core/fastq_download_prefetch_fasterqdump_sratools/**
   - tests/subworkflows/nf-core/fastq_download_prefetch_fasterqdump_sratools/**
 
+subworkflows/fastq_extractumi_fgbio_picard_gatk4_fastp:
+  - subworkflows/nf-core/fastq_extractumi_fgbio_picard_gatk4_fastp/**
+  - tests/subworkflows/nf-core/fastq_extractumi_fgbio_picard_gatk4_fastp/**
+
 subworkflows/fastq_fastqc_umitools_fastp:
   - subworkflows/nf-core/fastq_fastqc_umitools_fastp/**
   - tests/subworkflows/nf-core/fastq_fastqc_umitools_fastp/**
